@@ -15,6 +15,9 @@ class ContratoController extends Controller
      */
     public function index()
     {
+        $contrato = Contrato::findOrFail(1);
+        dd($contrato->posto->name);
+
         // Listar contratos
         $contratos = Contrato::orderBy('cnpj', 'ASC')->get();
         return view('contrato.index', ['contratos' => $contratos]);

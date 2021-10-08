@@ -15,6 +15,11 @@ class LeituraController extends Controller
      */
     public function index()
     {
+
+        $leitura = Leitura::findOrFail(3);
+       // dd($leitura->bico->bomba->posto->contrato->proprietario->email);  Testando relacionamento laravel
+
+
         // Listar todos as Leituras
         $leituras = Leitura::orderBy('updated_at', 'ASC')->get();
         //dd($postos);
